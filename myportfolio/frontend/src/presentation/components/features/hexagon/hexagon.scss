@@ -1,0 +1,134 @@
+$hexagon-size: 180px;
+$hexagon-background: #004070;
+$hexagon-hover-background: #1900ff;
+$hexagon-transition-sec: 0.5s;
+
+.hexagon {
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  cursor: pointer;
+  transition: transform, bottom, left, right, top, $hexagon-transition-sec;
+  width: $hexagon-size;
+  height: $hexagon-size;
+  position: absolute;
+
+  &-title {
+    margin: 25px 30px 0 30px;
+    text-align: center;
+  }
+
+  &-img {
+    width: 40px;
+    aspect-ratio: 1;
+  }
+
+  &-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-title{
+      position: absolute;
+      top: 110px;
+      text-align: center;
+    }
+  }
+
+  &-inner {
+    transition: background-color $hexagon-transition-sec;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    animation: hex-anim 2s linear infinite alternate;
+
+    @keyframes hex-anim {
+      from {
+        background-color: $hexagon-background;
+      }
+
+      to {
+        background-color: $hexagon-hover-background;
+      }
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 25px 25px;
+      gap: 5px;
+    }
+
+  }
+
+  &-subtext {
+    word-spacing: 100vw;
+    text-align: center;
+  }
+
+  &-top-left {
+    top: calc($hexagon-size / 3);
+    right: 0;
+  }
+
+  &-top-right {
+    top: calc($hexagon-size / 3);
+    left: 0;
+  }
+
+  &-bottom-left {
+    bottom: calc($hexagon-size / 3);
+    right: 0;
+  }
+
+  &-bottom-right {
+    bottom: calc($hexagon-size / 3);
+    left: 0;
+  }
+
+  &-left {
+    right: calc($hexagon-size / 2);
+  }
+
+  &-right {
+    left: calc($hexagon-size / 2);
+  }
+}
+
+@media screen and (max-width: 700px),
+screen and (max-height:600px) {
+  .hexagon {
+    transform: scale(0.5);
+
+    &-top-left {
+      top: calc(-1 * $hexagon-size / 16);
+      right: calc(-1 * $hexagon-size / 4);
+    }
+
+    &-top-right {
+      top: calc(-1 * $hexagon-size / 16);
+      left: calc(-1 * $hexagon-size / 4);
+    }
+
+    &-bottom-left {
+      bottom: calc(-1 * $hexagon-size / 16);
+      right: calc(-1 * $hexagon-size / 4);
+    }
+
+    &-bottom-right {
+      bottom: calc(-1 * $hexagon-size / 16);
+      left: calc(-1 * $hexagon-size / 4);
+    }
+
+    &-left {
+      right: 0;
+    }
+
+    &-right {
+      left: 0;
+    }
+  }
+}

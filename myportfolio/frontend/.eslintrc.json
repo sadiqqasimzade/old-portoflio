@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "root": true,
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "parserOptions": { "project": ["tsconfig.json"] },
+  "plugins": [
+    "@typescript-eslint"
+  ] 
+}
