@@ -1,0 +1,105 @@
+$text-color: #eacdc2;
+$backgroud-color: #1a1423;
+$navbar-shadow-options: 0px 0px 300px 2px white;
+$navbar-height: 70px;
+$navbar-border-radius: 100vw;
+$navbar-li-margin: 0 20px;
+$navbar-icon-translateY: 35px;
+$navbar-icon-background-color: yellowgreen;
+$navbar-icon-border-radius: 50%;
+$navbar-icon-border: 6px solid $backgroud-color;
+$navbar-icon-margin: 20px;
+$navbar-icon-transition: 0.5s;
+$navbar-icon-size: 20px;
+$navbar-text-transition: 0.5s;
+$navbar-text-font-size: 1em;
+$navbar-text-font-weight: 600;
+$navbar-text-hover-top: 15px;
+$navbar-text-color: black;
+.navbar {
+  height: $navbar-height;
+  background-color: $text-color;
+  display: grid;
+  place-items: center;
+  box-shadow: $navbar-shadow-options;
+  border-radius: $navbar-border-radius;
+  &-active{
+    .navbar-icon {
+      margin: $navbar-icon-margin;
+      &-holder {
+        transform: translateY($navbar-icon-translateY);
+        background-color: $navbar-icon-background-color;
+        border-radius: $navbar-icon-border-radius;
+        border: $navbar-icon-border;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .navbar-text {
+      top: $navbar-text-hover-top;
+      opacity: 1 !important;
+    }
+  }
+  ul {
+    display: flex;
+    height: 100%;
+     a:hover {
+      .navbar-icon {
+        margin: $navbar-icon-margin;
+        &-holder {
+          transform: translateY($navbar-icon-translateY);
+          background-color: $navbar-icon-background-color;
+          border-radius: $navbar-icon-border-radius;
+          border: $navbar-icon-border;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .navbar-text {
+        top: $navbar-text-hover-top;
+        opacity: 1;
+      }
+    }
+
+    li {
+      list-style: none;
+      height: 100%;
+      margin: $navbar-li-margin;
+      display: flex;
+      a {
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        -webkit-user-drag: none;
+        .navbar-icon {
+          width: $navbar-icon-size;
+          height: $navbar-icon-size;
+          transition: $navbar-icon-transition;
+          &-holder {
+            transition: $navbar-icon-transition;
+          }
+        }
+        .navbar-text {
+          position: absolute;
+          color: $navbar-text-color;
+          font-size: $navbar-text-font-size;
+          transition: $navbar-text-transition;
+          font-weight: $navbar-text-font-weight;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}

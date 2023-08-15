@@ -1,0 +1,23 @@
+.flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.overflow-hidder{
+  overflow: hidden;
+}
+.fullscreen {
+  width: 100%;
+  height: 100vh;
+}
+
+.white-filter {
+  filter: brightness(0) invert(1);
+}
+ 

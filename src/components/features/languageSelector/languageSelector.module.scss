@@ -1,0 +1,80 @@
+.circular-menu {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    z-index: 1;
+    &-btn {
+      border-radius: 50%;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      display: grid;
+      place-content: center;
+      img {
+        width: 25px;
+        height: 25px;
+        user-select: none;
+      }
+    }
+    &-item {
+      opacity: 0; 
+    }
+    &.active {
+      & {
+        left: 25px;
+      }
+      .circular-menu {
+        &-item {
+          opacity: 1;
+          &:nth-child(1) {
+            transform: translate(0, -100px);
+            &:hover {
+              transform:translate(0, -100px) scale(1.4);
+            }
+          }
+          &:nth-child(2) {
+            transform: translate(50px, -50px);
+            &:hover {
+              transform:translate(50px, -50px) scale(1.4);
+            }
+          }
+        }
+      }
+      &::after {
+        transform: scale(5);
+        transition: transform 0.5s linear;
+      }
+    }
+    &::after {
+      content:" ";
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -2;
+      background-color: blue;
+      transition: all 0.6s linear;
+      box-shadow: inset 0 0 35px #fff, 0 0 35px #fff;
+    }
+    &-item {
+      transform: translate(-75px, 35px);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: transform 0.5s linear, opacity 0.2s linear;
+      cursor: pointer;
+      will-change: transform;
+    }
+  }
+  

@@ -1,0 +1,22 @@
+$loader-size: 100%;
+$loader-size-min: 40px;
+$loader-anim-duration: 1s;
+
+.ring {
+  width: $loader-size;
+  min-width: $loader-size-min;
+  max-width: 100px;
+  aspect-ratio: 1;
+  color: white;
+  animation: rotate-ring $loader-anim-duration linear infinite;
+}
+
+@keyframes rotate-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

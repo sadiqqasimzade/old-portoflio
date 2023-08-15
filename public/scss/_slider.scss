@@ -1,0 +1,34 @@
+.slide-transition {
+  &-l {
+    &-enter {
+      transform: translateX(-100%);
+      &-active {
+        transform: translateX(0);
+        transition: transform 400ms linear;
+      }
+    }
+    &-exit {
+      transform: translateX(0);
+      &-active {
+        transform: translateX(100%);
+        transition: transform 400ms linear;
+      }
+    }
+  }
+  &-r {
+    &-enter {
+      transform: translateX(100%);
+      &-active {
+        transform: translateX(0);
+        transition: transform 400ms linear;
+      }
+    }
+    &-exit {
+      transform: translateX(0);
+      &-active {
+        transform: translateX(-100%);
+        transition: transform 400ms linear;
+      }
+    }
+  }
+}

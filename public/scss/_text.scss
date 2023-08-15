@@ -1,0 +1,49 @@
+.fw {
+  &-bold {
+    font-weight: bold;
+  }
+  &-bolder {
+    font-weight: bolder;
+  }
+}
+
+.fs {
+  &-large {
+    font-size: large;
+  }
+  &-larger {
+    font-size: larger;
+  }
+  &-5 {
+    font-size: var(--fs-5);
+    @media screen and (max-width: 375px) {
+      font-size: var(--fs-4);
+    }
+  }
+  &-4 {
+    font-size: var(--fs-4);
+  }
+  &-3 {
+    font-size: var(--fs-3);
+  }
+  &-2 {
+    font-size: var(--fs-2);
+  }
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-decoration-none {
+    text-decoration: none;
+  }
+  &-shadow {
+    filter: drop-shadow(var(--text-shadow));
+  }
+}
+
+.highlighted {
+  color: var(--highlighted-text-color);
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
